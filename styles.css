@@ -157,7 +157,7 @@ body, html {
   text-align: start;
   background-color: rgb(229, 87, 57, 1.3);
   scroll-margin-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 190px;
 }
 
 .about-section h1 {
@@ -196,7 +196,7 @@ body, html {
 .pilares-section {
   text-align: center;
   scroll-margin-top: 70px; 
-  padding: 40px 20px 100px;
+  padding: 60px 20px 280px;
   background:
     /* Naranja abajo derecha */
     radial-gradient(
@@ -672,29 +672,34 @@ video::-webkit-media-controls-fullscreen-button {
   .pilares-box { width: 200px; height: 200px; }
   .pilares-box p { font-size: 18px; padding: 12px; }
 
-  /* Offering: single column, make the aside box match widths */
-  .offering-container { grid-template-columns: 1fr; width: 90%; margin: 0 auto; gap: 24px; }
-  .offering-box { width: 100%; max-width: 100%; }
-  .offering-box-aparte { width: 100%; max-width: 100%; margin: 0 !important; padding: 20px 15px; }
+  /* About to Pilares: reduce space */
+  .about-section { padding-bottom: 80px; }
 
-  /* Clientes: stack columns and center title; logos 2 por fila */
+  /* Offering: single column, make the aside box match widths, prevent overflow */
+  .offering-section { padding: 40px 0; }
+  .offering-container { grid-template-columns: 1fr; width: 100%; margin: 0; gap: 20px; padding: 0 16px; box-sizing: border-box; }
+  .offering-box { width: 100%; max-width: 100%; margin: 0; }
+  .offering-box-aparte { width: 100%; max-width: 100%; margin: 0 !important; }
+
+  /* Clientes: stack columns and center title; logos 2 por fila, prevent overflow */
   .clientes-section { flex-direction: column; }
-  .clientes-container, .clientes-videos { width: 100%; padding: 20px; }
+  .clientes-container, .clientes-videos { width: 100%; padding: 20px; box-sizing: border-box; }
   .clientes-container h1 { text-align: center; }
-  .clientes-logos { grid-template-columns: repeat(2, 1fr); gap: 12px; width: 100%; }
-  .clientes-logos-box img { max-width: 85%; }
+  .clientes-logos { grid-template-columns: repeat(2, 1fr); gap: 12px; width: 100%; padding: 0 8px; box-sizing: border-box; }
+  .clientes-logos-box img { max-width: 100%; }
 
   /* Videos / carousel: keep natural video height, use 16:9 and contain */
+  .clientes-videos { display: flex; align-items: center; justify-content: center; }
   .carousel { width: 100%; max-width: 100%; height: auto; margin: 0 auto; padding: 0 16px; box-sizing: border-box; }
   .video-slide { position: relative; display: none; width: 100%; }
   .video-slide.active { display: block; }
   .video-slide video, .cliente-video { width: 100%; height: 480px; aspect-ratio: 16 / 9; object-fit: contain; border-radius: 12px; }
   .expand-btn { top: 8px; right: 8px; }
 
-  /* Carousel controls repositioned */
-  .carousel-btn { top: auto; bottom: 12px; transform: none; width: 44px; height: 44px; border-radius: 50%; font-size: 20px; }
-  .carousel-btn.prev { left: 12px; }
-  .carousel-btn.next { right: 12px; }
+  /* Carousel controls repositioned and centered vertically */
+  .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; font-size: 20px; background: rgba(0, 0, 0, 0.5); }
+  .carousel-btn.prev { left: 8px; }
+  .carousel-btn.next { right: 8px; }
 }
 
 @media (max-width: 600px) {
