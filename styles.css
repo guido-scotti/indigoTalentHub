@@ -672,6 +672,7 @@ video::-webkit-media-controls-fullscreen-button {
   .pilares-logos { grid-template-columns: repeat(2, 1fr); gap: 18px; width: 90%; }
   .pilares-box { width: 200px; height: 200px; }
   .pilares-box p { font-size: 18px; padding: 12px; }
+  .pilares-section { padding-bottom: 50px; }
 
   /* About to Pilares: reduce space */
   .about-section { padding-bottom: 80px; }
