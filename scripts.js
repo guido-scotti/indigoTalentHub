@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
      CARRUSEL DE VIDEOS
   ====================== */
 
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
   const slides = document.querySelectorAll('.video-slide');
   const nextBtn = document.querySelector('.carousel-btn.next');
   const prevBtn = document.querySelector('.carousel-btn.prev');
@@ -40,96 +42,70 @@ document.addEventListener('DOMContentLoaded', () => {
   ====================== */
 
   const modal = document.getElementById('videoModal');
-  const modalVideo = document.querySelector('.modalVideo');
+  const modalVideo = document.getElementById('video-ampliado');
   const closeBtn = document.querySelector('.close-modal');
-  let lastBackgroundVideo = null;
-  let lastBackgroundWasPlaying = false;
 
-  // Configure modal video to disallow native fullscreen where supported
-  if (modalVideo) {
-    try {
-      modalVideo.setAttribute('controlsList', 'nofullscreen nodownload');
-      // Allow inline playback on iOS / mobile browsers
-      modalVideo.setAttribute('playsinline', '');
-      modalVideo.setAttribute('webkit-playsinline', '');
-      modalVideo.disablePictureInPicture = true;
-      modalVideo.addEventListener('dblclick', (ev) => ev.preventDefault());
-    } catch (e) {}
-  }
+  let lastBackgroundVideo = null;
 
   slides.forEach(slide => {
     const video = slide.querySelector('video');
     if (!video) return;
 
-    // Set a sane default volume for thumbnails and ensure volume control is available
-    try { if (typeof video.volume === 'number' && video.volume === 1) video.volume = 0.5; } catch (e) {}
-    // allow inline playback for thumbnail videos on mobile
-    try { video.setAttribute('playsinline', ''); video.setAttribute('webkit-playsinline', ''); } catch (e) {}
+    // permitir inline (desktop + mobile)
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
 
-    // Toggle play/pause when clicking the video itself
-    video.addEventListener('click', (e) => {
-      if (e.target !== video) return;
-      try {
-        if (video.paused) video.play(); else video.pause();
-      } catch (err) {}
+    video.addEventListener('click', () => {
+
+      // 📱 MOBILE → abrir modal directamente
+      if (isMobile) {
+        openModal(video);
+        return;
+      }
+
+      // 🖥 DESKTOP → play / pause inline
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
     });
 
-    // Open modal only when the expand button is clicked
-    const expandBtn = slide.querySelector('.expand-btn');
-    if (expandBtn) {
-      expandBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const source = video.querySelector('source');
-        const src = source ? source.src : video.src;
-        if (!modal || !modalVideo) return;
-
-        // Record background video and whether it was playing, then pause it
-        lastBackgroundVideo = video;
-        lastBackgroundWasPlaying = !video.paused && !video.ended;
-        try { video.pause(); } catch (e) {}
-
-        modal.classList.add('active');
-        // prevent page scroll while modal is open
-        try { document.body.classList.add('no-scroll'); } catch (e) {}
-        modalVideo.src = src;
-        // sync volume from thumbnail to modal
-        try { modalVideo.volume = (typeof video.volume === 'number' ? video.volume : 0.5); } catch (e) {}
-        modalVideo.play();
-      });
-    }
   });
+
+  function openModal(video) {
+    const source = video.querySelector('source');
+    const src = source ? source.src : video.src;
+
+    lastBackgroundVideo = video;
+    video.pause();
+
+    modal.classList.add('active');
+    document.body.classList.add('no-scroll');
+
+    modalVideo.src = src;
+    modalVideo.currentTime = 0;
+    modalVideo.play();
+  }
 
   function closeModal() {
-    if (modalVideo) {
-      modalVideo.pause();
-      modalVideo.currentTime = 0;
-      modalVideo.src = '';
-    }
-    if (modal) modal.classList.remove('active');
-    try { document.body.classList.remove('no-scroll'); } catch (e) {}
+    modal.classList.remove('active');
+    document.body.classList.remove('no-scroll');
 
-    // If the background video was playing before opening modal, resume it
-    if (lastBackgroundVideo) {
-      try { lastBackgroundVideo.currentTime = 0; } catch (e) {}
-      if (lastBackgroundWasPlaying) {
-        try { lastBackgroundVideo.play(); } catch (e) {}
-      }
-    }
+    modalVideo.pause();
+    modalVideo.src = '';
+
     lastBackgroundVideo = null;
-    lastBackgroundWasPlaying = false;
   }
 
-  // Close modal with Escape key for accessibility
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' || e.key === 'Esc') closeModal();
+  closeBtn.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
   });
 
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-  if (modal) {
-    modal.addEventListener('click', e => {
-      if (e.target === modal) closeModal();
-    });
-  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
 
 });
