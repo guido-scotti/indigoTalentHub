@@ -303,6 +303,11 @@ body, html {
   transition: transform 0.2s ease-in-out; 
 }
 
+.offering-box-aparte:hover { 
+  transform: scale(1.02); 
+  transition: transform 0.2s ease-in-out; 
+}
+
 .offering-info h3 { 
   font-size: 24px; 
   color: #000; 
