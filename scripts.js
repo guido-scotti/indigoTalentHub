@@ -49,6 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (modalVideo) {
     try {
       modalVideo.setAttribute('controlsList', 'nofullscreen nodownload');
+      // Allow inline playback on iOS / mobile browsers
+      modalVideo.setAttribute('playsinline', '');
+      modalVideo.setAttribute('webkit-playsinline', '');
       modalVideo.disablePictureInPicture = true;
       modalVideo.addEventListener('dblclick', (ev) => ev.preventDefault());
     } catch (e) {}
@@ -60,6 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set a sane default volume for thumbnails and ensure volume control is available
     try { if (typeof video.volume === 'number' && video.volume === 1) video.volume = 0.5; } catch (e) {}
+    // allow inline playback for thumbnail videos on mobile
+    try { video.setAttribute('playsinline', ''); video.setAttribute('webkit-playsinline', ''); } catch (e) {}
 
     // Toggle play/pause when clicking the video itself
     video.addEventListener('click', (e) => {
@@ -113,6 +118,11 @@ document.addEventListener('DOMContentLoaded', () => {
     lastBackgroundVideo = null;
     lastBackgroundWasPlaying = false;
   }
+
+  // Close modal with Escape key for accessibility
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || e.key === 'Esc') closeModal();
+  });
 
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
 

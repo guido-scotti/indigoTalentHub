@@ -631,3 +631,65 @@ video::-webkit-media-controls-fullscreen-button {
   display: none !important;
 }
 
+/* ==========================
+   Reglas responsivas (al final)
+   ========================== */
+
+/* Utilidades generales */
+.hero img, .clientes-logos-box img, .contacto-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .nav-links { gap: 16px; margin-right: 40px; }
+  .hero img { max-width: 85%; margin-top: 100px; }
+  .about-section h1 { font-size: 48px; width: 90%; }
+  .about-section p { font-size: 24px; width: 90%; }
+  .offering-section h1 { font-size: 64px; width: 85%; }
+  .offering-container { gap: 30px; }
+  .clientes-container h1 { font-size: 42px; }
+  .carousel { width: 420px; height: 640px; }
+}
+
+@media (max-width: 900px) {
+  .nav-links { margin-right: 16px; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .nav-links a { padding: 8px 12px; font-size: 18px; }
+  .navbar { padding: 10px 20px; height: auto; }
+  .hero { padding-top: 80px; }
+  .hero img { max-width: 100%; margin-top: 40px; }
+  .presentacion { padding-top: 80px; font-size: 20px; }
+  .pilares-logos { grid-template-columns: repeat(2, 1fr); gap: 20px; width: 90%; }
+  .pilares-box { width: 220px; height: 220px; }
+  .offering-container { grid-template-columns: 1fr; width: 90%; }
+  .offering-box, .offering-box-aparte { width: 100%; }
+  .clientes-section { flex-direction: column; }
+  .clientes-container, .clientes-videos { width: 100%; padding: 20px; }
+  .cliente-video { max-width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; }
+  .carousel { width: 100%; height: auto; position: relative; }
+  /* On small screens ensure only the active slide is visible and flows naturally */
+  .video-slide { position: relative; display: none; opacity: 1; position: relative; }
+  .video-slide.active { display: block; opacity: 1; }
+  .video-slide video { width: 100%; height: auto; object-fit: cover; border-radius: 12px; }
+  .expand-btn { top: 8px; right: 8px; }
+  .carousel-btn { top: auto; bottom: 8px; transform: none; width: 44px; height: 44px; border-radius: 50%; font-size: 20px; }
+  .carousel-btn.prev { left: 16px; bottom: 16px; }
+  .carousel-btn.next { right: 16px; bottom: 16px; }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .about-section h1 { font-size: 34px; padding-top: 90px; }
+  .about-section p { font-size: 18px; }
+  .pilares-box { width: 150px; height: 150px; }
+  .pilares-logos { grid-template-columns: repeat(1, 1fr); }
+  .offering-section h1 { font-size: 36px; width: 95%; margin-bottom: 40px; }
+  .offering-info h3 { font-size: 20px; }
+  .offering-info p { font-size: 16px; }
+  .clientes-logos { grid-template-columns: 1fr; gap: 12px; }
+  .contacto-section h1 { font-size: 36px; }
+  .iconos-contacto a { width: 44px; height: 44px; margin: 0 8px; }
+  .video-modal video { max-width: 98%; max-height: 80%; }
+}
+
+
