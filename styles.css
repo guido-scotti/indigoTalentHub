@@ -295,6 +295,7 @@ body, html {
   background-color: #FFF;
   border-radius: 20px;
   text-align: center;
+  width: 90%;
   margin: 45px auto 50px;
 }
 
@@ -677,15 +678,16 @@ video::-webkit-media-controls-fullscreen-button {
 
   /* Offering: single column, make the aside box match widths, prevent overflow */
   .offering-section { padding: 40px 0; }
-  .offering-container { grid-template-columns: 1fr; width: 100%; margin: 0; gap: 20px; padding: 0 16px; box-sizing: border-box; }
-  .offering-box { width: 100%; max-width: 100%; margin: 0; }
-  .offering-box-aparte { width: 100%; max-width: 100%; margin: 0 !important; }
+  .offering-container { grid-template-columns: 1fr; width: 100%; margin: 0; gap: 20px; padding: 0 24px; box-sizing: border-box; }
+  .offering-box { width: 100%; max-width: 100%; margin: 0; padding: 20px 15px; }
+  .offering-box-aparte { width: 89%; max-width: 100%; margin: 18px auto !important; padding: 20px 15px; }
 
   /* Clientes: stack columns and center title; logos 2 por fila, prevent overflow */
   .clientes-section { flex-direction: column; }
   .clientes-container, .clientes-videos { width: 100%; padding: 20px; box-sizing: border-box; }
   .clientes-container h1 { text-align: center; }
   .clientes-logos { grid-template-columns: repeat(2, 1fr); gap: 12px; width: 100%; padding: 0 8px; box-sizing: border-box; }
+  .clientes-logos-box { max-width: 160px; margin: 0 auto; }
   .clientes-logos-box img { max-width: 100%; }
 
   /* Videos / carousel: keep natural video height, use 16:9 and contain */
@@ -696,10 +698,10 @@ video::-webkit-media-controls-fullscreen-button {
   .video-slide video, .cliente-video { width: 100%; height: 480px; aspect-ratio: 16 / 9; object-fit: contain; border-radius: 12px; }
   .expand-btn { top: 8px; right: 8px; }
 
-  /* Carousel controls repositioned and centered vertically */
-  .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; font-size: 20px; background: rgba(0, 0, 0, 0.5); }
-  .carousel-btn.prev { left: 8px; }
-  .carousel-btn.next { right: 8px; }
+  /* Carousel controls repositioned outside video and rectangular */
+  .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 60px; border-radius: 6px; font-size: 24px; background: rgba(0, 0, 0, 0.5); border: none; color: white; cursor: pointer; }
+  .carousel-btn.prev { left: -15px; }
+  .carousel-btn.next { right: -15px; }
 }
 
 @media (max-width: 600px) {
