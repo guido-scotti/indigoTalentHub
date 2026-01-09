@@ -123,4 +123,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ======================
+     SISTEMA DE MAIL
+  ====================== */
+
+  const mailLink = document.getElementById('mail-link');
+  if (!mailLink) return;
+
+  const email = 'info@indigotalenthub.com';
+  const subject = encodeURIComponent('Contacto desde la web');
+  const body = encodeURIComponent('Hola Juan,\n\n');
+
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    // Mobile → mail app nativa
+    mailLink.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  } else {
+    // Desktop → Gmail web
+    mailLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+    mailLink.target = '_blank';
+    mailLink.rel = 'noopener noreferrer';
+  }
+
 });
