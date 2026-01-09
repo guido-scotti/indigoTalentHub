@@ -112,39 +112,7 @@ body, html {
 .hero img {
   max-width: 100%;
   height: auto;
-  margin-top: 120px;
-}
-
-.presentacion {
-  text-align: center;
-  font-size: 26px;
-  color: #fff;
-  margin-top: 50px;
-  padding-top: 170px;
-  font-family: 'Onest', sans-serif;
-  font-weight: 100;
-}
-
-.hero-texto {
-  align-items: center;
-  opacity: 0.3;
-  transform: translateX(-100vw); 
-  animation: heroTextoIn 0.9s cubic-bezier(.77,0,.18,1) 0.2s forwards;
-}
-
-@keyframes heroTextoIn {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.hero-resume h2 {
-  font-size: 2rem;
-  color: #fff;
-  font-weight: 50;
-  font-family: 'Onest', sans-serif;   
-  margin-top: 0;            
+  margin: 0 auto;
 }
 
 /* SECCION ABOUT INDIGO */
@@ -622,7 +590,7 @@ video::-webkit-media-controls-fullscreen-button {
 
 @media (max-width: 1024px) {
   .nav-links { gap: 16px; margin-right: 40px; }
-  .hero img { max-width: 85%; margin-top: 100px; }
+  .hero img { max-width: 85%; margin: 0 auto; }
   .about-section h1 { font-size: 48px; width: 90%; }
   .about-section p { font-size: 24px; width: 90%; }
   .offering-section h1 { font-size: 64px; width: 85%; }
@@ -642,7 +610,6 @@ video::-webkit-media-controls-fullscreen-button {
   .hero { padding-top: 100px; justify-content: center; min-height: 80vh; }
   .hero > div { display: flex; flex-direction: column; align-items: center; }
   .hero img { max-width: 360px; width: 80%; margin: 0 auto; }
-  .presentacion { padding-top: 24px; font-size: 18px; text-align: center; }
 
   .pilares-logos { grid-template-columns: repeat(2, 1fr); gap: 18px; width: 90%; }
   .pilares-box { width: 200px; height: 200px; }
