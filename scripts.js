@@ -45,11 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let lastBackgroundVideo = null;
   let lastBackgroundWasPlaying = false;
 
-  // Configure modal video to disallow native fullscreen where supported
   if (modalVideo) {
     try {
       modalVideo.setAttribute('controlsList', 'nofullscreen nodownload');
-      // Allow inline playback on iOS / mobile browsers
       modalVideo.setAttribute('playsinline', '');
       modalVideo.setAttribute('webkit-playsinline', '');
       modalVideo.disablePictureInPicture = true;
@@ -61,12 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const video = slide.querySelector('video');
     if (!video) return;
 
-    // Set a sane default volume for thumbnails and ensure volume control is available
     try { if (typeof video.volume === 'number' && video.volume === 1) video.volume = 0.5; } catch (e) {}
-    // allow inline playback for thumbnail videos on mobile
     try { video.setAttribute('playsinline', ''); video.setAttribute('webkit-playsinline', ''); } catch (e) {}
 
-    // Toggle play/pause when clicking the video itself
     video.addEventListener('click', (e) => {
       if (e.target !== video) return;
       try {
@@ -74,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (err) {}
     });
 
-    // Open modal only when the expand button is clicked
     const expandBtn = slide.querySelector('.expand-btn');
     if (expandBtn) {
       expandBtn.addEventListener('click', (e) => {
@@ -83,16 +77,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const src = source ? source.src : video.src;
         if (!modal || !modalVideo) return;
 
-        // Record background video and whether it was playing, then pause it
         lastBackgroundVideo = video;
         lastBackgroundWasPlaying = !video.paused && !video.ended;
         try { video.pause(); } catch (e) {}
 
         modal.classList.add('active');
-        // prevent page scroll while modal is open
+
         try { document.body.classList.add('no-scroll'); } catch (e) {}
         modalVideo.src = src;
-        // sync volume from thumbnail to modal
+
         try { modalVideo.volume = (typeof video.volume === 'number' ? video.volume : 0.5); } catch (e) {}
         modalVideo.play();
       });
@@ -108,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modal) modal.classList.remove('active');
     try { document.body.classList.remove('no-scroll'); } catch (e) {}
 
-    // If the background video was playing before opening modal, resume it
     if (lastBackgroundVideo) {
       try { lastBackgroundVideo.currentTime = 0; } catch (e) {}
       if (lastBackgroundWasPlaying) {
@@ -119,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
     lastBackgroundWasPlaying = false;
   }
 
-  // Close modal with Escape key for accessibility
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' || e.key === 'Esc') closeModal();
   });

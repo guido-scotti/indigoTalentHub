@@ -95,21 +95,16 @@ body, html {
   margin: 0 auto;
   box-sizing: border-box;
   background:
-    /* Azul claro arriba izquierda */
     radial-gradient(
       circle at top left,
       rgba(70, 90, 255, 0.651),
       transparent 50%
     ),
-
-    /* Naranja abajo derecha */
     radial-gradient(
       circle at bottom right,
       rgba(229, 87, 57, 1),
       transparent 45%
     ),
-
-    /* Color base */
     #030537;
   
 }
@@ -198,13 +193,10 @@ body, html {
   scroll-margin-top: 70px; 
   padding: 60px 20px 280px;
   background:
-    /* Naranja abajo derecha */
     radial-gradient(
     ellipse 100% 90% at top center, 
     rgba(229,87,57,1) 50%, 
     transparent 75%),
-
-    /* Color base */
     #F5A43A;
 }
 
@@ -260,13 +252,10 @@ body, html {
   padding: 60px 20px; 
   scroll-margin-top: 80px; 
   background:
-    /* Naranja abajo derecha */
     radial-gradient(
     ellipse 100% 100% at top center, 
     rgba(70, 90, 255, 0.651), 
     transparent 80%),
-
-    /* Color base */
     #030537;
 } 
 
@@ -441,7 +430,6 @@ body, html {
   object-fit: cover;
 }
 
-/* Expand button on video slides */
 .expand-btn {
   position: absolute;
   top: 12px;
@@ -504,21 +492,16 @@ body, html {
     padding-bottom: 20px;
     padding-top: 5px;
     background:
-    /* Azul claro arriba izquierda */
     radial-gradient(
       circle at bottom left,
       rgba(70, 90, 255, 0.65),
       transparent 50%
     ),
-
-    /* Naranja abajo derecha */
     radial-gradient(
       circle at top right,
       rgba(229, 87, 57, 1),
       transparent 50%
     ),
-
-    /* Color base */
     #030537;
 }
 
@@ -604,36 +587,31 @@ body, html {
   cursor: pointer;
 }
 
-/* Personaliza el ancho y color de la barra */
 body::-webkit-scrollbar {
   width: 10px;
   background: #030537; 
 }
 
-/* Color del "track" (fondo de la scrollbar) */
 body::-webkit-scrollbar-track {
   background: #030537;
 }
 
-/* Color del "thumb" (la parte que se mueve) */
 body::-webkit-scrollbar-thumb {
   background: #E55739;
   border-radius: 8px;
 }
 
-/* Prevent scrolling when modal is open */
 body.no-scroll {
   overflow: hidden;
   height: 100%;
 }
 
-/* Try to hide native fullscreen control on WebKit (best-effort) */
 video::-webkit-media-controls-fullscreen-button {
   display: none !important;
 }
 
 /* ==========================
-   Reglas responsivas (al final)
+   responsive styles
    ========================== */
 
 /* Utilidades generales */
@@ -654,36 +632,30 @@ video::-webkit-media-controls-fullscreen-button {
 }
 
 @media (max-width: 900px) {
-  /* Pilares: reduce h1 font size */
+
   .pilares-section h1 { font-size: 24px; margin: 1.5rem auto; }
 
-  /* Navbar: only show logo */
   .nav-links { display: none; }
 
   .navbar { padding: 10px 20px; height: auto; }
 
-  /* Hero: center and scale down */
   .hero { padding-top: 100px; justify-content: center; min-height: 80vh; }
   .hero > div { display: flex; flex-direction: column; align-items: center; }
   .hero img { max-width: 360px; width: 80%; margin: 0 auto; margin-top: 20px; }
   .presentacion { padding-top: 24px; font-size: 18px; text-align: center; }
 
-  /* Pilares: 2 por fila, círculos y fuente más pequeña */
   .pilares-logos { grid-template-columns: repeat(2, 1fr); gap: 18px; width: 90%; }
   .pilares-box { width: 200px; height: 200px; }
   .pilares-box p { font-size: 18px; padding: 12px; }
   .pilares-section { padding-bottom: 50px; }
 
-  /* About to Pilares: reduce space */
   .about-section { padding-bottom: 80px; }
 
-  /* Offering: single column, make the aside box match widths, prevent overflow */
   .offering-section { padding: 40px 0; }
   .offering-container { grid-template-columns: 1fr; width: 100%; margin: 0; gap: 20px; padding: 0 24px; box-sizing: border-box; }
   .offering-box { width: 100%; max-width: 100%; margin: 0; padding: 4px 10px; }
   .offering-box-aparte { width: 89%; max-width: 100%; margin: 18px auto !important; padding: 4px 10px; }
 
-  /* Clientes: stack columns and center title; logos 2 por fila, prevent overflow */
   .clientes-section { flex-direction: column; }
   .clientes-container, .clientes-videos { width: 100%; padding: 20px; box-sizing: border-box; }
   .clientes-container h1 { text-align: center; }
@@ -691,7 +663,6 @@ video::-webkit-media-controls-fullscreen-button {
   .clientes-logos-box { max-width: 160px; margin: 0 auto; }
   .clientes-logos-box img { max-width: 100%; }
 
-  /* Videos / carousel: keep natural video height, use 16:9 and contain */
   .clientes-videos { display: flex; align-items: center; justify-content: center; width: 100%; }
   .carousel { position: relative; width: 100%; max-width: 100%; height: auto; margin: 0 auto; padding: 0 16px; box-sizing: border-box; }
   .video-slide { position: relative; display: none; width: 100%; margin: 0; padding: 0; }
@@ -699,7 +670,6 @@ video::-webkit-media-controls-fullscreen-button {
   .video-slide video, .cliente-video { width: 100%; height: 480px; aspect-ratio: 16 / 9; object-fit: contain; border-radius: 12px; display: block; }
   .expand-btn { display: none;}
 
-  /* Carousel controls repositioned outside video and rectangular */
   .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 30px; height: 50px; border-radius: 6px; font-size: 24px; background: rgba(0, 0, 0, 0.5); border: none; color: white; cursor: pointer; z-index: 10; }
   .carousel-btn.prev { left: -14px; }
   .carousel-btn.next { right: -14px; }
