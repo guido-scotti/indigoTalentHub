@@ -733,7 +733,7 @@ video::-webkit-media-controls-fullscreen-button {
 
 @media (max-width: 600px) {
   body { font-size: 16px; }
-  .about-foto img { width: 200px; height: 200px; margin: auto; margin-top: 40px; }
+  .about-foto img { width: 200px; height: 200px; margin: auto; margin-top: 40px; margin-bottom: 40px;}
   .about-section h1 { font-size: 34px; padding-top: 90px; }
   .about-section p { font-size: 18px; }
   .pilares-box { width: 150px; height: 150px; margin: 0 auto; }
