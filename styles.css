@@ -155,6 +155,27 @@ body, html {
   font-weight: bold;
 }
 
+.about-foto {
+  margin: 60px auto 60px;
+  text-align: center;
+}
+
+.about-foto img {
+  width: 360px;            
+  height: 360px;           
+  border-radius: 50%;      
+  object-fit: cover;
+}
+
+.caption-foto {
+  margin: 10px auto;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Onest', sans-serif;
+}
+
 /* SECCION DE PILARES */
 .pilares-section {
   text-align: center;
@@ -543,7 +564,7 @@ body, html {
     background-color: #242325;
     color: #fff;
     transition: border-color 0.3s ease;
-    font-family: 'Poppins', 'Montserrat', sans-serif;
+    font-family: 'Onest', sans-serif;
 }
 
 /* BOTÓN */
@@ -563,7 +584,7 @@ body, html {
     transition: 0.3s;
     margin-top: 5px;
     margin-bottom: 30px;
-    font-family: 'Poppins', 'Montserrat', sans-serif;
+    font-family: 'Onest', sans-serif;
 }
 
 .message-button:hover {
@@ -649,6 +670,7 @@ video::-webkit-media-controls-fullscreen-button {
 @media (max-width: 1024px) {
   .nav-links { gap: 16px; margin-right: 40px; }
   .hero img { max-width: 85%; margin: 0 auto; }
+  .about-foto img { width: 300px; height: 300px; margin-right: 90px; }
   .about-section h1 { font-size: 48px; width: 90%; }
   .about-section p { font-size: 24px; width: 90%; }
   .offering-section h1 { font-size: 64px; width: 85%; }
@@ -674,6 +696,8 @@ video::-webkit-media-controls-fullscreen-button {
   .pilares-box p { font-size: 18px; padding: 12px; }
   .pilares-section { padding-bottom: 50px; }
 
+  .about-foto { margin-left: 0; margin-top: 25px; margin-bottom: 10px; }
+  .about-foto img { width: 260px; height: 260px; }
   .about-section { padding-bottom: 80px; }
 
   .offering-section { padding: 40px 0; }
@@ -709,6 +733,7 @@ video::-webkit-media-controls-fullscreen-button {
 
 @media (max-width: 600px) {
   body { font-size: 16px; }
+  .about-foto img { width: 200px; height: 200px; margin: auto; margin-top: 40px; }
   .about-section h1 { font-size: 34px; padding-top: 90px; }
   .about-section p { font-size: 18px; }
   .pilares-box { width: 150px; height: 150px; margin: 0 auto; }
