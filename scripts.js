@@ -146,4 +146,27 @@ document.addEventListener('DOMContentLoaded', () => {
     mailLink.rel = 'noopener noreferrer';
   }
 
+    /* ======================
+     EMAIL SENDING 
+  ====================== */
+  (function(){
+  emailjs.init("CdLb5SWx4R2_52mgO");
+})();
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm("service_6y83n3o", "template_zzy4zi3", this)
+    .then(() => {
+      alert("✅ Mensaje enviado correctamente!");
+      form.reset(); // limpia el formulario
+    })
+    .catch(err => {
+      console.error("❌ Error:", err);
+      alert("Hubo un error al enviar el mensaje, intentá de nuevo.");
+    });
+});
+
 });
