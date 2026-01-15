@@ -255,16 +255,18 @@
   <form id="contact-form">
     <div class="left-form">
       <input class="inputs" type="text" id="name" name="name" 
-        placeholder="Tu nombre" required>
+      placeholder="Tu nombre" required>
+      <input class="inputs" type="text" id="enterprise" name="enterprise" 
+      placeholder="Tu empresa" required>
       <input class="inputs" type="email" id="email" name="email" 
-        placeholder="tuemail@ejemplo.com" required>
+      placeholder="tuemail@ejemplo.com" required>
       <textarea class="inputs" id="message" name="message" rows="4" 
-        placeholder="Mensaje" required></textarea>
+      placeholder="Mensaje" required></textarea>
     </div>
-      <button class="message-button" type="submit">ENVIAR</button> 
+    <button class="message-button" type="submit">ENVIAR</button> 
   </form>
-
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   
   <div class="iconos-contacto">
     <a href="https://www.instagram.com/indigotalenthub/" target="_blank"> 

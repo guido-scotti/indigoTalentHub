@@ -149,24 +149,24 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ======================
      EMAIL SENDING 
   ====================== */
-  (function(){
-  emailjs.init("CdLb5SWx4R2_52mgO");
-})();
+    (function() {
+    emailjs.init("24nNjZwbJ1jiMR7js");
+    })();
 
-const form = document.getElementById("contact-form");
+  const form = document.getElementById("contact-form");
 
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  emailjs.sendForm("service_6y83n3o", "template_zzy4zi3", this)
-    .then(() => {
-      alert("✅ Mensaje enviado correctamente!");
-      form.reset(); // limpia el formulario
-    })
-    .catch(err => {
-      console.error("❌ Error:", err);
-      alert("Hubo un error al enviar el mensaje, intentá de nuevo.");
-    });
-});
+    emailjs.sendForm("service_y3ezsdv", "template_fn9shco", this)
+      .then(() => {
+        alert("✅ Mensaje enviado correctamente!");
+        form.reset(); // limpia el formulario
+      })
+      .catch(err => {
+        console.error("❌ Error:", err);
+        alert("Hubo un error al enviar el mensaje, intentá de nuevo.");
+      });
+  });
 
 });
