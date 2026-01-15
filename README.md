@@ -9,8 +9,8 @@
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 ![GoDaddy](https://img.shields.io/badge/godaddy-%231BDBDB.svg?style=for-the-badge&logo=godaddy&logoColor=white)
 ![Google Workspace](https://img.shields.io/badge/google_workspace-4285F4?style=for-the-badge&logo=google-workspace&logoColor=white)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/guidoscotti/)
 ![Vercel Deploy](https://img.shields.io/badge/deploy-success-brightgreen?style=flat-square&logo=vercel)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)]((https://www.linkedin.com/in/guidoscotti/))
 
 ## 🌐 Demo
 Puedes ver el sitio en vivo aquí: [indigotalenthub.com](https://indigotalenthub.com)
@@ -47,7 +47,7 @@ Si deseas correr este proyecto localmente:
 
 1. **Clona el repositorio:**
    ```bash
-   git clone [https://github.com/tu-usuario/indigo-landing.git](https://github.com/tu-usuario/indigo-landing.git)
+   git clone [https://github.com/guido-scotti/indigoTalentHub.git](https://github.com/guido-scotti/indigoTalentHub.git)
 
 2. Abre el proyecto: Puedes usar el plugin Live Server en VS Code o simplemente abrir el index.html.
 
@@ -65,7 +65,9 @@ Si deseas correr este proyecto localmente:
   <img src="./assets/ssIndigo.png" alt="Screenshot de la Landing Page" width="800px">
 </p>
 
-Desarrollado con ❤️ por Guido Scotti.
+---
+
+Desarrollado por Guido Scotti.
 
 LinkedIn: [Perfil de Linkedin](https://www.linkedin.com/in/guidoscotti/)
 
