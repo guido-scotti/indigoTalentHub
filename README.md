@@ -10,7 +10,7 @@
 ![GoDaddy](https://img.shields.io/badge/godaddy-%231BDBDB.svg?style=for-the-badge&logo=godaddy&logoColor=white)
 ![Google Workspace](https://img.shields.io/badge/google_workspace-4285F4?style=for-the-badge&logo=google-workspace&logoColor=white)
 ![Vercel Deploy](https://img.shields.io/badge/deploy-success-brightgreen?style=flat-square&logo=vercel)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/guidoscotti/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)]((https://www.linkedin.com/in/guidoscotti/))
 
 ## 🌐 Demo
 Puedes ver el sitio en vivo aquí: [indigotalenthub.com](https://indigotalenthub.com)
