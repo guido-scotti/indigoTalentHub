@@ -1,3 +1,7 @@
+/* Ajuste específico para el tercer item de resultados */
+.resultados-lista .resultado-item:nth-child(3) {
+  margin-left: 9px; /* Ajusta este valor según necesidad visual */
+}
 body, html {
   margin: 0;
   padding: 0;
@@ -202,8 +206,9 @@ body, html {
   color: #fff;
   margin: 0 auto 24px;
   max-width: 55rem;
-  width: 50%;
-  padding-right: 40px;
+  width: 70%;
+  text-align: left;
+  padding-left: 3px;
   box-sizing: border-box;
 }
 
@@ -212,7 +217,7 @@ body, html {
   border-radius: 20px;
   padding: 35px 45px;
   max-width: 55rem;
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   box-shadow: 0 8px 40px rgba(0,0,0,0.15);
 }
@@ -225,7 +230,13 @@ body, html {
 
 .resultado-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+
+.resultado-icono {
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .resultado-texto p {
@@ -285,7 +296,7 @@ body, html {
 
 .adn-card-wrapper {
   position: relative;
-  padding-bottom: 40px;
+  padding-bottom: 40px; /* space so the overlapping bar doesn't get clipped */
 }
 
 .adn-card {
