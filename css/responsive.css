@@ -182,7 +182,7 @@ video::-webkit-media-controls-fullscreen-button {
 @media (max-width: 600px) {
   body { font-size: 16px; }
 
-  .hero-tagline { max-width: 95%; margin-bottom: 30px; }
+  .hero-tagline { max-width: 95%; margin-bottom: 30px; margin-top: 90px;}
   .hero-tagline-bold { font-size: 18px; }
   .hero-tagline-sub { font-size: 14px; }
   /* About */
