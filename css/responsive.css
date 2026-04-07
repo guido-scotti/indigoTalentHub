@@ -159,6 +159,26 @@ video::-webkit-media-controls-fullscreen-button {
   .message-button { width: 130px; font-size: 16px; line-height: 38px;}
 }
 
+@media (max-height: 800px) {
+  .hero-categories {
+    margin-bottom: 80px;
+    margin-top: 60px;
+  }
+
+  .hero-tagline {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+
+  .hero-tagline-bold {
+    font-size: 28px;
+  }
+
+  .hero-tagline-sub {
+    font-size: 18px;
+  }
+}
+
 @media (max-width: 600px) {
   body { font-size: 16px; }
 
