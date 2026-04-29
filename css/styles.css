@@ -776,6 +776,46 @@ body, html {
     font-family: 'Onest', sans-serif;
 }
 
+.contact-radio-group {
+  width: 100%;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 10px;
+  padding: 14px 15px;
+  box-sizing: border-box;
+  backdrop-filter: blur(4px);
+}
+
+.contact-radio-group .contact-radio-title {
+  margin: 0 0 12px;
+  color: #fff;
+  font-family: 'Onest', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.contact-radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-family: 'Onest', sans-serif;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+}
+
+.contact-radio-option:last-child {
+  margin-bottom: 0;
+}
+
+.contact-radio-option input[type="radio"] {
+  accent-color: #E55739;
+  transform: scale(1.05);
+  margin: 0;
+}
+
 /* BOTÓN */
 .message-button{
     display: inline-block;

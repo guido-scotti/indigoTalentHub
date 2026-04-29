@@ -315,19 +315,42 @@
 
   <h1>¡Contactanos!</h1>
 
-  <form id="contact-form">
-    <div class="left-form">
-      <input class="inputs" type="text" id="name" name="name" 
-      placeholder="Tu nombre" required>
-      <input class="inputs" type="text" id="enterprise" name="enterprise" 
-      placeholder="Tu empresa" required>
-      <input class="inputs" type="email" id="email" name="email" 
-      placeholder="tuemail@ejemplo.com" required>
-      <textarea class="inputs" id="message" name="message" rows="4" 
-      placeholder="Mensaje" required></textarea>
+<form id="contact-form">
+  <div class="left-form">
+    <input class="inputs" type="text" id="name" name="name" placeholder="Tu nombre" required>
+    <input class="inputs" type="text" id="enterprise" name="enterprise" placeholder="Tu empresa" required>
+    <input class="inputs" type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+    <textarea class="inputs" id="message" name="message" rows="4" placeholder="Mensaje" required></textarea>
+
+    <div class="contact-radio-group">
+      <p class="contact-radio-title">¿Cómo nos conociste?</p>
+
+      <label class="contact-radio-option">
+        <input type="radio" name="como_nos_conociste" value="Linkedin" required>
+        <span>Linkedin</span>
+      </label>
+
+      <label class="contact-radio-option">
+        <input type="radio" name="como_nos_conociste" value="Instagram">
+        <span>Instagram</span>
+      </label>
+
+      <label class="contact-radio-option">
+        <input type="radio" name="como_nos_conociste" value="Evento">
+        <span>En un evento</span>
+      </label>
+
+      <label class="contact-radio-option">
+        <input type="radio" name="como_nos_conociste" value="Recomendado">
+        <span>Te lo recomendó un conocido</span>
+      </label>
     </div>
-    <button class="message-button" type="submit">ENVIAR</button> 
-  </form>
+    
+  </div>
+
+  <button class="message-button" type="submit">ENVIAR</button>
+</form>
+
   
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   
