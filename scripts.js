@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    emailjs.sendForm("service_y3ezsdv", "template_fn9shco", this)
+    emailjs.sendForm("service_xn1nuxp", "template_fn9shco", this)
       .then(() => {
         alert("✅ Mensaje enviado correctamente!");
         form.reset(); // limpia el formulario
