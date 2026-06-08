@@ -563,19 +563,20 @@ body, html {
 .clientes-logos {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  width: 100%;
-  margin-bottom: 30px;
+  gap: 70px 25px;
+  margin-top: 40px;
 }
 
 .clientes-logos-box {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 .clientes-logos-box img {
   max-width: 80%;
+  height: auto;
   object-fit: contain;
 }
 
