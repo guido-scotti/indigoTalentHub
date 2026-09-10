@@ -817,6 +817,35 @@ body, html {
   margin: 0;
 }
 
+/* ======================
+   OPT-IN CHECKBOX
+====================== */
+.opt-in-container {
+    display: flex;
+    align-items: center; /* Cambiado a center para que el check y el texto queden nivelados */
+    justify-content: flex-start; /* Fuerza la alineación a la izquierda */
+    gap: 10px;
+    width: 100%;
+}
+
+.opt-in-container input[type="checkbox"] {
+    accent-color: #E55739;
+    transform: scale(1.05);
+    margin: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.opt-in-container label {
+    font-family: 'Onest', sans-serif;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.92);
+    cursor: pointer;
+    margin: 0;
+    text-align: left; 
+    white-space: nowrap; /* ESTO es lo que obliga a que quede todo en un solo renglón */
+}
+
 /* BOTÓN */
 .message-button{
     display: inline-block;
