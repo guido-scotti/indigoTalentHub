@@ -117,7 +117,6 @@ video::-webkit-media-controls-fullscreen-button {
   .offering-card h3 { font-size: 17px; }
   .offering-card p { font-size: 14px; }
 
-  /* Fotos circulares — fila scrolleable horizontal */
   .offering-fotos {
     height: auto;
     display: flex;
@@ -230,10 +229,44 @@ video::-webkit-media-controls-fullscreen-button {
   .inputs { font-size: 15px; padding: 10px 12px; }
   .message-button { width: 120px; font-size: 15px; line-height: 36px; }
   .opt-in-container label {
-        font-size: 12.5px; /* Lo achicamos un poco más para asegurar que entre */
-        letter-spacing: -0.3px; /* Juntamos apenitas las letras para ganar espacio */
+        font-size: 12.5px; 
+        letter-spacing: -0.3px; 
     }
   .opt-in-container input[type="checkbox"] {
-      margin-top: 2px; /* Ajuste milimétrico para que no quede desfasado del texto más chico */
+      margin-top: 2px; 
   }
+
+  /* AJUSTES PÁGINA DE GRACIAS */
+    .gracias-body {
+        height: 100vh; 
+        overflow: hidden;
+    }
+
+    .gracias-section {
+        padding-top: 70px;
+    }
+
+    .gracias-section h1 {
+        font-size: 30px; 
+        margin-bottom: 15px;
+    }
+
+    .gracias-text {
+        font-size: 15px;
+        margin: 0 15px 30px; 
+    }
+
+    .btn-volver {
+        width: 200px; 
+        font-size: 15px;
+    }
+
+    .footer-gracias {
+        padding-bottom: 15px; 
+    }
+    
+    .footer-gracias .iconos-contacto {
+        margin-bottom: 15px; 
+    }
+
 }

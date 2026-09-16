@@ -16,10 +16,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Indigo</title>
   <link rel="icon" href="png/logoNavIndigo.png" type="image/png">
+  <link rel="preload" as="image" href="png/logoindigo.png">
 
-  <!-- FONTS -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Onest&family=Baskervville&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Onest&family=Baskervville&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css"/>
   <link rel="stylesheet" href="css/responsive.css"/>
@@ -48,7 +49,7 @@
 <section id="top" class="hero">
     <p class="hero-categories">PEOPLE · LEADERSHIP · ORGANIZATIONAL TRANSFORMATION · AI</p>
     <div>
-        <img src="png/logoindigo.png" alt="logo" width="650"/>
+        <img src="png/logoindigo.png" alt="logo" width="650" fetchpriority="high"/>
     </div>
     <div class="hero-tagline">
         <p class="hero-tagline-bold">Hacemos que las personas sean el motor del crecimiento de tu organización.</p>
@@ -63,7 +64,7 @@
 
     <div class="about-foto">
       <figure>
-        <img src="png/fotojuan.png" alt="Juan Andrés González Dematine" width="300"/>
+        <img src="png/fotojuan.png" alt="Juan Andrés González Dematine" width="300" loading="lazy"/>
         <figcaption class="caption-foto">Juan Andrés González Dematine - Founder de Indigo Talent Hub</figcaption>
       </figure>
     </div>
@@ -102,7 +103,7 @@
     <div class="resultados-lista">
 
       <div class="resultado-item">
-        <img class="resultado-icono" src="png/itemResultados1.png" alt="icono 1"/>
+        <img class="resultado-icono" src="png/itemResultados1.png" alt="icono 1" loading="lazy"/>
         <div class="resultado-texto">
           <p class="resultado-bold">• Ahorro de costos de estructura</p>
           <p>Accedés a seniority estratégico sin sumar posiciones full-time innecesarias.</p>
@@ -110,7 +111,7 @@
       </div>
 
       <div class="resultado-item">
-        <img class="resultado-icono" src="png/itemResultados2.png" alt="icono 2"/>
+        <img class="resultado-icono" src="png/itemResultados2.png" alt="icono 2" loading="lazy"/>
         <div class="resultado-texto">
           <p class="resultado-bold">• Equipos más eficientes</p>
           <p>Procesos claros, roles definidos y líderes con accountability.</p>
@@ -118,7 +119,7 @@
       </div>
 
       <div class="resultado-item">
-        <img class="resultado-icono" src="png/itemResultados3.png" alt="icono 3"/>
+        <img class="resultado-icono" src="png/itemResultados3.png" alt="icono 3" loading="lazy"/>
         <div class="resultado-texto">
           <p class="resultado-bold">• Recuperación de tiempo</p>
           <p>Delegás la complejidad organizacional y volvés a enfocarte en hacer crecer el negocio.</p>
@@ -234,25 +235,25 @@
   <!-- FOTOS CIRCULARES -->
   <div class="offering-fotos">
     <div class="foto-circulo fc-l">
-      <img src="png/fotoRRHH1.png" alt="foto 1"/>
+      <img src="png/fotoRRHH1.png" alt="foto 1" loading="lazy"/>
     </div>
     <div class="foto-circulo fc-xl">
-      <img src="png/fotoRRHH2.png" alt="foto 2"/>
+      <img src="png/fotoRRHH2.png" alt="foto 2" loading="lazy"/>
     </div>
     <div class="foto-circulo fc-m">
-      <img src="png/fotoRRHH3.png" alt="foto 3"/>
+      <img src="png/fotoRRHH3.png" alt="foto 3" loading="lazy"/>
     </div>
     <div class="foto-circulo fc-xl">
-      <img src="png/fotoRRHH4.png" alt="foto 4"/>
+      <img src="png/fotoRRHH4.png" alt="foto 4" loading="lazy"/>
     </div>
     <div class="foto-circulo fc-l">
-      <img src="png/fotoRRHH5.png" alt="foto 5"/>
+      <img src="png/fotoRRHH5.png" alt="foto 5" loading="lazy"/>
     </div>
     <div class="foto-circulo fc-xl">
-      <img src="png/fotoRRHH6.png" alt="foto 6"/>
+      <img src="png/fotoRRHH6.png" alt="foto 6" loading="lazy"/>
     </div>
     <div class="foto-circulo fc-m">
-      <img src="png/fotoRRHH7.png" alt="foto 7"/>
+      <img src="png/fotoRRHH7.png" alt="foto 7" loading="lazy"/>
     </div>
   </div>
 
@@ -268,28 +269,28 @@
 
     <div class="clientes-logos">
       <div class="clientes-logos-box">
-        <img src="png/tapi.png" alt="tapi" width="210">
+        <img src="png/tapi.png" alt="tapi" width="210" loading="lazy">
       </div>
       <div class="clientes-logos-box">
-        <img src="png/ausa.jpg" alt="ausa" width="220">
+        <img src="png/ausa.jpg" alt="ausa" width="220" loading="lazy">
       </div>
       <div class="clientes-logos-box">
-        <img src="png/modo.png" alt="modo" width="250">
+        <img src="png/modo.png" alt="modo" width="250" loading="lazy">
       </div>
       <div class="clientes-logos-box">
-        <img src="png/telecom.png" alt="telecom" width="250">
+        <img src="png/telecom.png" alt="telecom" width="250" loading="lazy">
       </div>
       <div class="clientes-logos-box">
-        <img src="png/globalprocessing.png" alt="globalprocessing" width="320">
+        <img src="png/globalprocessing.png" alt="globalprocessing" width="320" loading="lazy">
       </div>
       <div class="clientes-logos-box">
-        <img src="png/nubiral2.png" alt="nubiral" width="200">
+        <img src="png/nubiral2.png" alt="nubiral" width="200" loading="lazy">
       </div>
       <div class="clientes-logos-box">
-        <img src="png/creactivehub_logo.png" alt="creactivehub" width="300">
+        <img src="png/creactivehub_logo.png" alt="creactivehub" width="300" loading="lazy">
       </div>
       <div class="clientes-logos-box">
-        <img src="png/vraptor.png" alt="vraptor" width="180">
+        <img src="png/vraptor.png" alt="vraptor" width="180" loading="lazy">
       </div>
     </div>
   </div>

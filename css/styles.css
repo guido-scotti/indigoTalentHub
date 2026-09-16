@@ -822,8 +822,8 @@ body, html {
 ====================== */
 .opt-in-container {
     display: flex;
-    align-items: center; /* Cambiado a center para que el check y el texto queden nivelados */
-    justify-content: flex-start; /* Fuerza la alineación a la izquierda */
+    align-items: center; 
+    justify-content: flex-start; 
     gap: 10px;
     width: 100%;
 }
@@ -843,7 +843,52 @@ body, html {
     cursor: pointer;
     margin: 0;
     text-align: left; 
-    white-space: nowrap; /* ESTO es lo que obliga a que quede todo en un solo renglón */
+    white-space: nowrap; 
+}
+
+/* ======================
+   PÁGINA DE GRACIAS
+====================== */
+.gracias-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0;
+}
+
+.gracias-section {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px; 
+}
+
+.gracias-section h1 {
+    margin-bottom: 20px;
+}
+
+.gracias-text {
+    font-family: 'Onest', sans-serif;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 18px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.btn-volver {
+    width: 240px; 
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-gracias {
+    padding-top: 20px; 
 }
 
 /* BOTÓN */

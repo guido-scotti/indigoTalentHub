@@ -160,8 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     emailjs.sendForm("service_xn1nuxp", "template_fn9shco", this)
       .then(() => {
-        alert("✅ Mensaje enviado correctamente!");
         form.reset(); // limpia el formulario
+        window.location.href = "gracias.html";
       })
       .catch(err => {
         console.error("❌ Error:", err);
