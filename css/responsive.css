@@ -184,6 +184,18 @@ video::-webkit-media-controls-fullscreen-button {
   .hero-tagline { max-width: 95%; margin-bottom: 30px; margin-top: 90px;}
   .hero-tagline-bold { font-size: 18px; }
   .hero-tagline-sub { font-size: 14px; }
+  .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 10px; 
+        margin-bottom: 30px; 
+    }
+    .hero-btn {
+        width: 240px;
+        font-size: 15px;
+        padding: 12px 15px;
+    }
   /* About */
   .about-foto img { width: 200px; height: 200px; margin: auto; margin-top: 20px; }
   .caption-foto { font-size: 12px; margin-bottom: 60px; }
