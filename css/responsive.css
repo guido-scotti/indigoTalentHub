@@ -231,7 +231,12 @@ video::-webkit-media-controls-fullscreen-button {
   .fc-m  { width: 115px; height: 115px; }
 
   /* Clientes */
+  .clientes-container h1 { font-size: 30px; }
   .clientes-logos { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .clientes-logos-box img {
+        max-width: 85%; 
+        height: auto;
+    }
 
   /* Contacto */
   .contacto-section h1 { font-size: 36px; }

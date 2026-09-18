@@ -630,6 +630,16 @@ body, html {
   transition: transform 0.2s ease-in-out;
 }
 
+.logo-centrado {
+    width: 100%;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-top: -20px;
+}
+
 /* VIDEOS */
 .clientes-videos {
   width: 50%;
