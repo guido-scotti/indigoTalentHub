@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PKJ9HS4C');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda una reunión | Indigo</title>
+  <link rel="icon" href="png/logoNavIndigo.png" type="image/png">
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Onest&family=Baskervville&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body class="gracias-body">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKJ9HS4C"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- NAVBAR -->
+  <header class="navbar">
+      <a href="index.html">
+       <img src="png/logohero.png" alt="Indigo Logo" width="120"/>
+      </a>
+  </header>
+
+  <section class="contacto-section reunion-fullscreen">
+    <h1>Agenda una reunión</h1>
+
+    <form id="reunion-form" class="form-centrado">
+      <div class="left-form">
+        <input class="inputs" type="text" id="name" name="name" placeholder="Tu nombre" required>
+        <input class="inputs" type="text" id="enterprise" name="enterprise" placeholder="Tu empresa" required>
+        <input class="inputs" type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+        <textarea class="inputs" id="message" name="message" rows="4" placeholder="Fecha y horario de preferencia" required></textarea>
+      </div>
+      <button class="message-button" type="submit">ENVIAR</button>
+    </form>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      emailjs.init("24nNjZwbJ1jiMR7js"); 
+
+      const formReunion = document.getElementById('reunion-form');
+
+      if (formReunion) {
+        formReunion.addEventListener('submit', function(event) {
+          event.preventDefault(); 
+          
+          const serviceID = 'service_xn1nuxp'; 
+          const templateID = 'template_ewoffx8'; 
+
+          emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+              window.location.href = "formulario-reunion-enviado.html";
+            })
+            .catch((err) => {
+              console.error("Error al enviar EmailJS:", err);
+              alert("Hubo un problema al enviar. Intentá de nuevo.");
+            });
+        });
+      }
+      
+    });
+  </script>
+</body>
+</html>

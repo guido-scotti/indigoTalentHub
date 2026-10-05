@@ -970,6 +970,30 @@ body, html {
     transform: scale(1.07);
 }
 
+/* =========================================
+   PÁGINA REUNIÓN: CENTRADO PANTALLA COMPLETA
+========================================= */
+.reunion-fullscreen {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    box-sizing: border-box;
+    padding-top: 100px; 
+    padding-bottom: 40px;
+}
+
+#reunion-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+#reunion-form .left-form {
+    width: 100%; 
+    margin-bottom: 30px; 
+}
+
 /* MODAL DE VIDEO */
 .video-modal {
   position: fixed;

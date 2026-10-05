@@ -17,23 +17,28 @@ document.addEventListener('DOMContentLoaded', () => {
         slide.classList.add('active');
       } else {
         slide.classList.remove('active');
-        video.pause();
-        video.currentTime = 0;
+        if(video) {
+          video.pause();
+          video.currentTime = 0;
+        }
       }
     });
   }
 
-  nextBtn.addEventListener('click', () => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  });
+  // Agregamos el 'if' para que solo aplique los eventos si existen los botones
+  if (nextBtn && prevBtn) {
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
 
-  prevBtn.addEventListener('click', () => {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
-  });
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    });
 
-  showSlide(current);
+    showSlide(current);
+  }
 
   /* ======================
      MODAL DE VIDEO
@@ -155,8 +160,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const form = document.getElementById("contact-form");
 
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
+  if (contactForm) { 
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault();
 
     emailjs.sendForm("service_xn1nuxp", "template_fn9shco", this)
       .then(() => {
@@ -167,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error("❌ Error:", err);
         alert("Hubo un error al enviar el mensaje, intentá de nuevo.");
       });
-  });
+    });
+  }
 
 });
