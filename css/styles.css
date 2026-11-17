@@ -46,7 +46,7 @@ body, html {
 .nav-links {
   display: flex;
   gap: 25px;
-  align-items: center; /* <-- CAMBIADO de flex-start a center para que todo quede perfectamente alineado al medio */
+  align-items: center; 
   margin-right: 80px;
 }
 
@@ -71,19 +71,18 @@ body, html {
 
 .nav-dropdown {
   position: relative;
-  display: inline-flex; /* <-- Cambiado a inline-flex para alinear perfecto con los demás links */
+  display: inline-flex;
   align-items: center;
 }
 
-/* Menú desplegable con estética oscura corporativa */
 .nav-dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;           
   left: 0;
   min-width: 340px;
-  background: #030537; /* Fondo azul oscuro igual a la navbar */
-  border: 1px solid rgba(255, 255, 255, 0.15); /* Borde sutil elegante */
+  background: #030537; 
+  border: 1px solid rgba(255, 255, 255, 0.15); 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   padding: 10px 0;
@@ -93,18 +92,18 @@ body, html {
 .nav-dropdown-menu a {
   display: block;
   padding: 12px 20px;
-  font-size: 16px; /* Letra un poquito más chica para que entren bien los títulos de servicios */
+  font-size: 16px; 
   font-weight: 300;
   color: #fff;
   white-space: normal;
-  border-radius: 0; /* Para que el hover cubra prolijo el renglón */
+  border-radius: 0; 
 }
 
 /* Hover específico para las opciones de adentro del desplegable */
 .nav-dropdown-menu a:hover {
   background-color: #E55739;
   color: #fff;
-  transform: none; /* Evitamos que los links del menú se "agranden" de forma fea */
+  transform: none; 
 }
 
 .nav-dropdown:hover .nav-dropdown-menu,
@@ -185,14 +184,13 @@ body, html {
 /* Media Queries para Mobile en el Index */
 @media (max-width: 900px) {
   .nav-links {
-    display: none !important; /* Oculta los links de desktop en celulares */
+    display: none !important; 
   }
   
   .hamburger-btn {
-    display: flex !important; /* Muestra el botón hamburguesa */
+    display: flex !important; 
   }
 
-  /* Ajuste de formularios en index para mobile (por si acaso) */
   .left-form {
     max-width: 90% !important;
     margin: 20px auto !important;
@@ -505,13 +503,13 @@ body, html {
 
 .adn-card-wrapper {
   position: relative;
-  padding-bottom: 40px; /* space so the overlapping bar doesn't get clipped */
+  padding-bottom: 40px;
 }
 
 .adn-card {
   background-color: #fff;
   border-radius: 20px;
-  padding: 40px 50px 80px; /* extra bottom padding so list isn't hidden behind bar */
+  padding: 40px 50px 80px; 
 }
 
 .adn-list {
@@ -664,7 +662,7 @@ body, html {
 a.offering-card {
   text-decoration: none;
   color: inherit;
-  display: block; /* quitalo si .offering-card ya define otro display */
+  display: block; 
 }
 
 /* FOTOS CIRCULARES en offering */

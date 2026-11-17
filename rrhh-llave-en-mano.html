@@ -61,7 +61,6 @@ a{color:inherit}
   align-items: center;
 }
 
-/* Menú desplegable con estética oscura corporativa */
 .nav-dropdown-menu {
   display: none;
   position: absolute;
@@ -343,8 +342,7 @@ select.inputs {
 @media (max-width:900px){
   .navbar{padding:10px 20px;height:64px}
   .nav-links{display:none}
-  .hamburger-btn{display:flex} /* Muestra el botón hamburguesa en mobile */
-  
+  .hamburger-btn{display:flex}
   .navbar img{width:100px}
   .hero{padding:140px 0 90px}
   .hero h1{font-size:42px}
@@ -597,7 +595,6 @@ select.inputs {
       mobileMenu.classList.toggle('active');
     });
 
-    // Cierra el menú al hacer clic en cualquier link de adentro
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('active');

@@ -142,10 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   if (isMobile) {
-    // Mobile → mail app nativa
     mailLink.href = `mailto:${email}?subject=${subject}&body=${body}`;
   } else {
-    // Desktop → Gmail web
     mailLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
     mailLink.target = '_blank';
     mailLink.rel = 'noopener noreferrer';
