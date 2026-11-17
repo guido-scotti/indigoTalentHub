@@ -531,6 +531,11 @@ body, html {
   line-height: 1.6;
 }
 
+a.offering-card {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* quitalo si .offering-card ya define otro display */
+}
 
 /* FOTOS CIRCULARES en offering */
 .offering-fotos {
