@@ -154,25 +154,25 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ======================
      EMAIL SENDING 
   ====================== */
-    (function() {
+  (function() {
     emailjs.init("24nNjZwbJ1jiMR7js");
-    })();
+  })();
 
-  const form = document.getElementById("contact-form");
+  const contactForm = document.getElementById("contact-form");
 
   if (contactForm) { 
     contactForm.addEventListener('submit', function(event) {
       event.preventDefault();
 
-    emailjs.sendForm("service_xn1nuxp", "template_fn9shco", this)
-      .then(() => {
-        form.reset(); // limpia el formulario
-        window.location.href = "gracias.html";
-      })
-      .catch(err => {
-        console.error("❌ Error:", err);
-        alert("Hubo un error al enviar el mensaje, intentá de nuevo.");
-      });
+      emailjs.sendForm("service_xn1nuxp", "template_ewoffx8", this)
+        .then(() => {
+          contactForm.reset(); // limpia el formulario
+          window.location.href = "formulario-reunion-enviado.html";
+        })
+        .catch(err => {
+          console.error("❌ Error:", err);
+          alert("Hubo un error al enviar el mensaje, intentá de nuevo.");
+        });
     });
   }
 

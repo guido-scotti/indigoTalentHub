@@ -46,7 +46,7 @@ body, html {
 .nav-links {
   display: flex;
   gap: 25px;
-  align-items: flex-start;
+  align-items: center; /* <-- CAMBIADO de flex-start a center para que todo quede perfectamente alineado al medio */
   margin-right: 80px;
 }
 
@@ -67,6 +67,136 @@ body, html {
   border-color: #E55739;
   transform: scale(1.04);
   cursor: pointer;
+}
+
+.nav-dropdown {
+  position: relative;
+  display: inline-flex; /* <-- Cambiado a inline-flex para alinear perfecto con los demás links */
+  align-items: center;
+}
+
+/* Menú desplegable con estética oscura corporativa */
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;           
+  left: 0;
+  min-width: 340px;
+  background: #030537; /* Fondo azul oscuro igual a la navbar */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Borde sutil elegante */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 16px; /* Letra un poquito más chica para que entren bien los títulos de servicios */
+  font-weight: 300;
+  color: #fff;
+  white-space: normal;
+  border-radius: 0; /* Para que el hover cubra prolijo el renglón */
+}
+
+/* Hover específico para las opciones de adentro del desplegable */
+.nav-dropdown-menu a:hover {
+  background-color: #E55739;
+  color: #fff;
+  transform: none; /* Evitamos que los links del menú se "agranden" de forma fea */
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: block;
+}
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+  padding: 5px;
+  z-index: 1001;
+  margin-right: 35px;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Panel Desplegable Mobile */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 76px;
+  left: 0;
+  width: 100%;
+  background: #030537;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+  padding: 20px 30px;
+  z-index: 998;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-menu .mobile-services-title {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #E55739;
+  margin: 15px 0 5px;
+  font-weight: 600;
+}
+
+.mobile-subservices {
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.mobile-subservices a {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 8px 0;
+}
+
+/* Media Queries para Mobile en el Index */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none !important; /* Oculta los links de desktop en celulares */
+  }
+  
+  .hamburger-btn {
+    display: flex !important; /* Muestra el botón hamburguesa */
+  }
+
+  /* Ajuste de formularios en index para mobile (por si acaso) */
+  .left-form {
+    max-width: 90% !important;
+    margin: 20px auto !important;
+  }
 }
 
 /* LOGO */

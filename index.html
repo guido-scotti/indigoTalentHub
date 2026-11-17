@@ -33,17 +33,58 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- NAVBAR -->
-  <header class="navbar" >
-       <a href="#top">
-        <img src="png/logohero.png" alt="Indigo Logo" width="120"/>
-       </a>
-      <nav class="nav-links">
-        <a href="#about">Sobre Indigo</a>
-        <a href="#offering">Offering</a>
-        <a href="#clientes">Clientes</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-   </header>
+<header class="navbar">
+  <a href="index.html#top">
+    <img src="png/logohero.png" alt="Indigo Logo" width="120"/>
+  </a>
+  
+  <!-- Links normales para Desktop -->
+  <nav class="nav-links">
+    <a href="index.html#about">Sobre Indigo</a>
+
+    <div class="nav-dropdown">
+      <a href="#" class="nav-dropdown-trigger" aria-haspopup="true">Servicios ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="direccion-fractional.html">Dirección de Talento y Estrategia Fractional</a>
+        <a href="rrhh-llave-en-mano.html">RR.HH. Llave en Mano</a>
+        <a href="consultoria-360.html">Consultoría 360°, Transformación Organizacional + IA</a>
+        <a href="liderazgo-y-equipos.html">Liderazgo y Equipos de Alto Desempeño</a>
+        <a href="reclutamiento.html">Reclutamiento Especializado y Ágil</a>
+        <a href="transformacion-ia-rrhh.html">Transformación Organizacional + IA aplicada en HR</a>
+        <a href="mentoria-en-la-cancha.html">Mentoría en la Cancha</a>
+      </div>
+    </div>
+
+    <a href="index.html#clientes">Clientes</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+
+  <!-- Botón Hamburguesa para Mobile -->
+  <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<!-- Menú Desplegable Mobile -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html#about">Sobre Indigo</a>
+  
+  <div class="mobile-services-title">Servicios</div>
+  <div class="mobile-subservices">
+    <a href="direccion-fractional.html">Dirección de Talento y Estrategia Fractional</a>
+    <a href="rrhh-llave-en-mano.html">RR.HH. Llave en Mano</a>
+    <a href="consultoria-360.html">Consultoría 360°, Transformación Organizacional + IA</a>
+    <a href="liderazgo-y-equipos.html">Liderazgo y Equipos de Alto Desempeño</a>
+    <a href="reclutamiento.html">Reclutamiento Especializado y Ágil</a>
+    <a href="transformacion-ia-rrhh.html">Transformación Organizacional + IA aplicada en HR</a>
+    <a href="mentoria-en-la-cancha.html">Mentoría en la Cancha</a>
+  </div>
+
+  <a href="index.html#clientes">Clientes</a>
+  <a href="index.html#contacto">Contacto</a>
+</div>
 
 <!-- HOME -->
 <section id="top" class="hero">
@@ -180,12 +221,12 @@
 
 </section>
 
-<!-- OFFERING -->
+<!--
 <section id="offering" class="offering-section">
 
 <div class="offering-split">
 
-    <!-- MITAD IZQUIERDA: CEOs y Dueños -->
+
     <div class="offering-half offering-half--left">
       <div class="offering-half-header">
         <p class="offering-half-label">Para CEOs y Dueños</p>
@@ -208,10 +249,10 @@
       </div>
     </div>
 
-    <!-- DIVISOR -->
+
     <div class="offering-divider"></div>
 
-    <!-- MITAD DERECHA: Equipos de RRHH -->
+
     <div class="offering-half offering-half--right">
       <div class="offering-half-header">
         <p class="offering-half-label">Para Equipos de RR.HH.</p>
@@ -240,7 +281,7 @@
 
   </div>
 
-  <!-- FOTOS CIRCULARES -->
+ 
   <div class="offering-fotos">
     <div class="foto-circulo fc-l">
       <img src="png/fotoRRHH1.webp" alt="foto 1" loading="lazy"/>
@@ -265,8 +306,8 @@
     </div>
   </div>
 
-</section>
-
+</section> 
+-->
 
 <!-- CLIENTES -->
 <section id="clientes" class="clientes-section">
@@ -357,54 +398,15 @@
 <!-- CONTACTO/FOOTER -->
 <section id="contacto" class="contacto-section">
 
-  <h1>¡Contactanos!</h1>
+  <h1>¡Agenda una reunión!</h1>
 
-<form id="contact-form">
+<form id="contact-form" class="form-centrado">
   <div class="left-form">
     <input class="inputs" type="text" id="name" name="name" placeholder="Tu nombre" required>
     <input class="inputs" type="text" id="enterprise" name="enterprise" placeholder="Tu empresa" required>
     <input class="inputs" type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
-    <textarea class="inputs" id="message" name="message" rows="4" placeholder="Mensaje" required></textarea>
-
-    <div class="contact-radio-group">
-      <p class="contact-radio-title">¿Cómo nos conociste?</p>
-
-      <label class="contact-radio-option">
-        <input type="radio" name="como_nos_conociste" value="Linkedin" required>
-        <span>Linkedin</span>
-      </label>
-
-      <label class="contact-radio-option">
-        <input type="radio" name="como_nos_conociste" value="Instagram">
-        <span>Instagram</span>
-      </label>
-
-      <label class="contact-radio-option">
-        <input type="radio" name="como_nos_conociste" value="Google">
-        <span>Google</span>
-      </label>
-
-      <label class="contact-radio-option">
-        <input type="radio" name="como_nos_conociste" value="Evento">
-        <span>En un evento</span>
-      </label>
-
-      <label class="contact-radio-option">
-        <input type="radio" name="como_nos_conociste" value="Recomendado">
-        <span>Te lo recomendó un conocido</span>
-      </label>
-    </div>
-    
-    <!-- Checkbox agregado acá -->
-    <div class="opt-in-container">
-        <input type="checkbox" id="marketingOptIn" name="marketingOptIn" value="Sí">
-        <label for="marketingOptIn">
-            Acepto recibir emails con novedades y promociones.
-        </label>
-    </div>
-
+    <textarea class="inputs" id="message" name="message" rows="4" placeholder="Fecha y horario de preferencia" required></textarea>
   </div>
-
   <button class="message-button" type="submit">ENVIAR</button>
 </form>
 
@@ -442,6 +444,23 @@
 </div>
 
 <script src="scripts.js"></script>
+<script>
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (hamburgerBtn && mobileMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+  }
+</script>
+
 </body>
 
 </html>

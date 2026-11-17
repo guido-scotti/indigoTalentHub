@@ -29,10 +29,143 @@ a{color:inherit}
 .navbar{position:fixed;top:0;left:0;width:100%;height:76px;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:10px 40px;z-index:999;box-shadow:0 2px 4px rgba(0,0,0,.6)}
 .navbar img{display:block;width:120px;transition:transform .3s}
 .navbar img:hover{transform:scale(1.04)}
-.nav-links{display:flex;gap:18px;align-items:center;margin-right:40px}
-.nav-links a{text-decoration:none;color:#fff;padding:10px 16px;border-radius:8px;transition:.3s;font-size:18px;font-weight:300}
-.nav-links a:hover{background:var(--coral);transform:scale(1.04)}
-.nav-cta{display:none;text-decoration:none;background:var(--coral);color:#fff;font-family:Poppins,sans-serif;font-weight:600;font-size:14px;padding:9px 16px;border-radius:5px}
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  font-family: 'Onest', sans-serif;
+  font-weight: 100;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  background-color: #E55739;
+  border-color: #E55739;
+  transform: scale(1.04);
+  cursor: pointer;
+}
+
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Menú desplegable con estética oscura corporativa */
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;           
+  left: 0;
+  min-width: 340px;
+  background: #030537;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #fff;
+  white-space: normal;
+  border-radius: 0;
+}
+
+.nav-dropdown-menu a:hover {
+  background-color: #E55739;
+  color: #fff;
+  transform: none;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: block;
+}
+
+/* Menú Hamburguesa Mobile (Oculto en Desktop) */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Panel Mobile Desplegable */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 76px;
+  left: 0;
+  width: 100%;
+  background: #030537;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+  padding: 20px 30px;
+  z-index: 998;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-menu .mobile-services-title {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--coral);
+  margin: 15px 0 5px;
+  font-weight: 600;
+}
+
+.mobile-subservices {
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.mobile-subservices a {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 8px 0;
+}
 
 /* botones (igual al sitio) */
 .btns{display:flex;gap:20px;flex-wrap:wrap}
@@ -120,7 +253,67 @@ a{color:inherit}
 .logos img{max-height:46px;width:auto;margin:0 auto;display:block;object-fit:contain;filter:grayscale(1);opacity:.8;transition:.2s}
 .logos img:hover{filter:none;opacity:1}
 
-/* cierre: como "Contactanos" */
+.form-servicio{text-align:center;padding:110px 0 40px;background:radial-gradient(circle at left top,var(--blue),transparent 50%),radial-gradient(circle at right bottom,var(--coral),transparent 50%),var(--navy)}
+
+.left-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 40%;
+    margin: 5px auto 30px;
+}
+
+.left-form h2{font-family:Baskervville,serif;font-style:italic;font-weight:100;font-size:64px;margin:0 0 20px}
+
+.inputs, select.inputs {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #242325;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #242325;
+    transition: border-color 0.3s ease;
+    font-family: 'Onest', sans-serif;
+}
+
+select.inputs {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23242325' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+    padding-right: 40px;
+}
+
+.message-button{
+    display: block;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 15px;
+    color: #fff;
+    border: 2px solid #E55739;
+    background-color: #E55739;
+    width: 140px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 5px auto 25px auto;
+    font-family: 'Onest', sans-serif;
+}
+
+.message-button:hover {
+    transform: scale(1.07);
+}
+
+/* cierre */
 .contact{text-align:center;padding:110px 0 40px;background:radial-gradient(circle at left bottom,var(--blue),transparent 50%),radial-gradient(circle at right top,var(--coral),transparent 50%),var(--navy)}
 .contact h2{font-family:Baskervville,serif;font-style:italic;font-weight:100;font-size:64px;margin:0 0 20px}
 .contact .txt{font-size:19px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.88);max-width:700px;margin:0 auto 40px}
@@ -139,15 +332,19 @@ a{color:inherit}
 .copy b{font-weight:700}
 
 .origin p.label,.founder p.label{font-family:Onest,sans-serif;font-style:normal;font-size:13px;font-weight:600;letter-spacing:2px;color:var(--coral);line-height:1.4;margin:0 0 10px}
+
 @media (max-width:1024px){
   .hero h1{font-size:54px}
   .pains h2{font-size:42px}.pain p{font-size:22px}
   .cards.c3{grid-template-columns:1fr 1fr}
   .logos{grid-template-columns:repeat(5,1fr)}
 }
+
 @media (max-width:900px){
   .navbar{padding:10px 20px;height:64px}
-  .nav-links{display:none}.nav-cta{display:inline-block}
+  .nav-links{display:none}
+  .hamburger-btn{display:flex} /* Muestra el botón hamburguesa en mobile */
+  
   .navbar img{width:100px}
   .hero{padding:140px 0 90px}
   .hero h1{font-size:42px}
@@ -167,7 +364,11 @@ a{color:inherit}
   .stats{grid-template-columns:1fr}
   .others{grid-template-columns:1fr}
   .contact h2{font-size:46px}
+  
+  /* Ajuste para que el formulario ocupe buen ancho en mobile */
+  .left-form{max-width:90% !important; margin: 20px auto;}
 }
+
 @media (max-width:600px){
   .deco{display:none}
   .hero h1{font-size:34px}
@@ -185,6 +386,8 @@ a{color:inherit}
   .quote p{font-size:17px}
   .logos{grid-template-columns:repeat(3,1fr);gap:22px}
   .contact h2{font-size:38px}.contact .txt{font-size:16px}
+  
+  .left-form{max-width:95% !important;}
 }
 </style>
 </head>
@@ -192,15 +395,57 @@ a{color:inherit}
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKJ9HS4C" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="navbar">
-  <a href="index.html"><img src="https://www.indigotalenthub.com/png/logohero.png" alt="Indigo Talent Hub" width="120"></a>
+  <a href="index.html#top">
+    <img src="png/logohero.png" alt="Indigo Logo" width="120"/>
+  </a>
+  
+  <!-- Links de navegación para Desktop -->
   <nav class="nav-links">
     <a href="index.html#about">Sobre Indigo</a>
-    <a href="index.html#offering">Servicios</a>
+
+    <div class="nav-dropdown">
+      <a href="#" class="nav-dropdown-trigger" aria-haspopup="true">Servicios ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="direccion-fractional.html">Dirección de Talento y Estrategia Fractional</a>
+        <a href="rrhh-llave-en-mano.html">RR.HH. Llave en Mano</a>
+        <a href="consultoria-360.html">Consultoría 360°, Transformación Organizacional + IA</a>
+        <a href="liderazgo-y-equipos.html">Liderazgo y Equipos de Alto Desempeño</a>
+        <a href="reclutamiento.html">Reclutamiento Especializado y Ágil</a>
+        <a href="transformacion-ia-rrhh.html">Transformación Organizacional + IA aplicada en HR</a>
+        <a href="mentoria-en-la-cancha.html">Mentoría en la Cancha</a>
+      </div>
+    </div>
+
     <a href="index.html#clientes">Clientes</a>
-    <a href="#contacto">Contacto</a>
+    <a href="index.html#contacto">Contacto</a>
   </nav>
-  <a class="nav-cta" href="formulario-reunion.html?servicio=direccion-fractional">Agendá una reunión</a>
+
+  <!-- Botón Hamburguesa para Mobile -->
+  <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </header>
+
+<!-- Menú Desplegable Mobile -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html#about">Sobre Indigo</a>
+  
+  <div class="mobile-services-title">Servicios</div>
+  <div class="mobile-subservices">
+    <a href="direccion-fractional.html">Dirección de Talento y Estrategia Fractional</a>
+    <a href="rrhh-llave-en-mano.html">RR.HH. Llave en Mano</a>
+    <a href="consultoria-360.html">Consultoría 360°, Transformación Organizacional + IA</a>
+    <a href="liderazgo-y-equipos.html">Liderazgo y Equipos de Alto Desempeño</a>
+    <a href="reclutamiento.html">Reclutamiento Especializado y Ágil</a>
+    <a href="transformacion-ia-rrhh.html">Transformación Organizacional + IA aplicada en HR</a>
+    <a href="mentoria-en-la-cancha.html">Mentoría en la Cancha</a>
+  </div>
+
+  <a href="index.html#clientes">Clientes</a>
+  <a href="index.html#contacto">Contacto</a>
+</div>
 
 <section class="hero">
   <svg class="deco" viewBox="0 0 400 400" fill="none" aria-hidden="true"><circle cx="200" cy="200" r="180" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-dasharray="8 10"/><circle cx="200" cy="200" r="130" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-dasharray="8 10"/><circle cx="200" cy="200" r="80" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-dasharray="8 10"/><circle cx="200" cy="200" r="30" fill="rgba(255,255,255,.9)"/></svg>
@@ -288,6 +533,39 @@ a{color:inherit}
   </div>
 </section>
 
+<form id="service-form" class="form-servicio">
+  <div class="left-form">
+
+    <h2>Contáctanos</h2>
+
+    <input type="hidden" name="servicio" value="Dirección de Talento y Estrategia Fractional" />
+
+    <input class="inputs" type="text" name="servicio" value="Nombre" placeholder="Nombre" required>
+
+    <input class="inputs" type="text" id="empresa" name="empresa" placeholder="Empresa" required>
+    
+    <input class="inputs" type="text" id="cargo" name="cargo" placeholder="Cargo de quien completa" required>
+    
+    <select class="inputs" id="empleados" name="empleados" required>
+      <option value="" disabled selected>Cantidad de empleados</option>
+      <option value="1-10">1-10</option>
+      <option value="11-50">11-50</option>
+      <option value="51-200">51-200</option>
+      <option value="201-500">201-500</option>
+      <option value="+500">Más de 500</option>
+    </select>
+
+    <select class="inputs" id="necesidad" name="necesidad" required>
+      <option value="" disabled selected>¿Qué necesitás?</option>
+      <option value="Consultar por un servicio">Quiero consultar por un servicio</option>
+      <option value="Agendar una reunión">Quiero agendar una reunión</option>
+      <option value="Busco trabajo">Busco trabajo</option>
+    </select>
+  </div>
+
+  <button class="message-button" type="submit">ENVIAR</button>
+</form>
+
 <section class="contact" id="contacto">
   <div class="wrap">
     <h2>¿Hablamos?</h2>
@@ -309,5 +587,26 @@ a{color:inherit}
     <p class="copy">© 2026 <b>Juan Andrés González Dematine</b> | Todos los derechos reservados.</p>
   </div>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/service-form.js"></script>
+<script>
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (hamburgerBtn && mobileMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+
+    // Cierra el menú al hacer clic en cualquier link de adentro
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+  }
+</script>
+
 </body>
 </html>
