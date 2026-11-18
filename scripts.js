@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Agregamos el 'if' para que solo aplique los eventos si existen los botones
   if (nextBtn && prevBtn) {
     nextBtn.addEventListener('click', () => {
       current = (current + 1) % slides.length;
